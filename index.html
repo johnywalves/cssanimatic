@@ -12,71 +12,68 @@
 </head>
 
 <body>
-    <h1>CSS Animatic</h1>
-    <h2>CSS Animation easy, how should be</h2>
-
     <input id="check-animation" type="checkbox" checked="true" />
 
-    <label class="type-animation" for="check-animation">
-        <span>Animations</span>
-        <span>Transitions</span>
-    </label>
+    <div class="header">
+        <h1>CSS Animatic</h1>
+        <h2>CSS Animation easy, how should be</h2>
+        <label class="type-animation" for="check-animation">
+            <span>Animations</span>
+            <span>Transitions</span>
+        </label>
+    </div>
 
-    <div class="content">
+    <div class="preview">
+        <div id="box">42</div>
+    </div>
+
+    <div class="config">
         <div class="painel painel-animations">
             <p class="soon">Soon...</p>
         </div>
-
         <div class="painel painel-transitions">
-            <div>
-                <div class="config">
-                    <input id="check-action" type="checkbox" onchange='changeTransitions()' />
-                    <label for="check-action" class="actions">
-                        <span class="action-hover">On hover</span>
-                        <span class="action-infinity">Infinity</span>
-                    </label>
-                    <form id="form-transitions">
-                        <label for="transition-property">Property</label>
-                        <select id="transition-property" class="property" onchange='changeTransitions()'>
-                            <option>all</option>
-                            <option>transform</option>
-                            <option>height</option>
-                            <option>width</option>
-                            <option>box-shadow</option>
-                        </select>
-                        <label for="transition-delay">Delay (ms)</label>
-                        <input type="number" id="transition-delay" class="timer delay" value="0"
-                            onchange='changeTransitions()' />
-                        <label for="transition-duration">Duration (ms)</label>
-                        <input type="number" id="transition-duration" class="timer duration" value="500"
-                            onchange='changeTransitions()' />
-                        <label>Function</label>
-                        <select class="function" onchange='changeTransitions()'>
-                            <option>linear</option>
-                            <option>ease</option>
-                            <option>ease-in</option>
-                            <option>ease-out</option>
-                            <option>ease-in-out</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="code">
-                    <div class="sample">
-                        <div id="box">42</div>
-                    </div>
-                    <code class="simple">
-                        transition: all 0.5s 0s linear;
-                    </code>
-                    <code class="detailed">
-                        transition-delay: 0s;<br />
-                        transition-duration: 0.5s;<br />
-                        transition-property: all;<br />
-                        transition-timing-function: linear;
-                    </code>
-                </div>
-            </div>
-
+            <input id="check-action" type="checkbox" onchange='changeTransitions()' />
+            <label for="check-action" class="actions">
+                <span class="action-hover">On hover</span>
+                <span class="action-infinity">Infinity</span>
+            </label>
+            <form id="form-transitions">
+                <label for="transition-property">Property</label>
+                <select id="transition-property" class="property" onchange='changeTransitions()'>
+                    <option>all</option>
+                    <option>transform</option>
+                    <option>height</option>
+                    <option>width</option>
+                    <option>box-shadow</option>
+                </select>
+                <label for="transition-delay">Delay (ms)</label>
+                <input type="number" id="transition-delay" class="timer delay" value="0"
+                    onchange='changeTransitions()' />
+                <label for="transition-duration">Duration (ms)</label>
+                <input type="number" id="transition-duration" class="timer duration" value="500"
+                    onchange='changeTransitions()' />
+                <label>Function</label>
+                <select class="function" onchange='changeTransitions()'>
+                    <option>linear</option>
+                    <option>ease</option>
+                    <option>ease-in</option>
+                    <option>ease-out</option>
+                    <option>ease-in-out</option>
+                </select>
+            </form>
         </div>
+    </div>
+
+    <div class="code">
+        <code class="simple">
+            transition: all 0.5s 0s linear;
+        </code>
+        <code class="detailed">
+            transition-delay: 0s;<br />
+            transition-duration: 0.5s;<br />
+            transition-property: all;<br />
+            transition-timing-function: linear;
+        </code>
     </div>
 </body>
 

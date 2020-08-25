@@ -1,6 +1,6 @@
 var end = {
-  all: "scale(1.2)",
-  transform: "rotate(90deg)",
+  all: "translateX(-50%) scale(1.2)",
+  transform: "translateX(-50%) rotate(90deg)",
   height: "30rem",
   width: "40rem",
   "box-shadow": "0.25rem 0.25rem 0.25rem 0.25rem var(--shadowBox)",
@@ -42,7 +42,7 @@ function changeTransitions() {
     "s " +
     (delaySec !== 0 ? delaySec + "s " : "") +
     func;
-    
+
   var detailedHtml =
     "transition-delay: " +
     delaySec +
@@ -58,11 +58,8 @@ function changeTransitions() {
     ";";
 
   box.style.transition = css;
-  document.querySelector(".painel-transitions .simple").innerHTML =
-    "transition: " + css + ";";
-  document.querySelector(
-    ".painel-transitions .detailed"
-  ).innerHTML = detailedHtml;
+  document.querySelector(".simple").innerHTML = "transition: " + css + ";";
+  document.querySelector(".detailed").innerHTML = detailedHtml;
 }
 
 window.onload = changeTransitions;
