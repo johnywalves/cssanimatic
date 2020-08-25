@@ -7,8 +7,7 @@ var end = {
 };
 
 function changeTransitions() {
-  var infinity = document.querySelector("#form-transitions #check-action")
-    .checked;
+  var infinity = document.querySelector("#check-action").checked;
 
   var property = document.querySelector("#form-transitions .property").value;
   var delay = document.querySelector("#form-transitions .delay").value;
@@ -36,7 +35,14 @@ function changeTransitions() {
     box.style.animation = "";
   }
 
-  var css = property + " " + durationSec + "s " + delaySec + "s " + func;
+  var css =
+    property +
+    " " +
+    durationSec +
+    "s " +
+    (delaySec !== 0 ? delaySec + "s " : "") +
+    func;
+    
   var detailedHtml =
     "transition-delay: " +
     delaySec +
