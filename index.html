@@ -11,7 +11,7 @@
 
 <body>
     <h1>CSS Animatic</h1>
-    <h2>Animation in CSS easy, how should be</h2>
+    <h2>CSS Animation easy, how should be</h2>
 
     <input id="check-animation" type="checkbox" checked="true" />
 
@@ -29,6 +29,11 @@
             <div>
                 <div class="form">
                     <form id="form-transitions">
+                        <input id="check-action" type="checkbox" onchange='changeTransitions()' />
+                        <label for="check-action" class="actions">
+                            <span class="action-hover">On hover</span>
+                            <span class="action-infinity">Infinity</span>
+                        </label>
                         <label>Property</label>
                         <select class="property" onchange='changeTransitions()'>
                             <option>all</option>
@@ -53,7 +58,7 @@
                 </div>
                 <div class="code">
                     <div class="sample">
-                        <div id="box" onmouseenter="mouseEnter()" onmouseleave="mouseLeave()">42</div>
+                        <div id="box">42</div>
                     </div>
                     <code class="simple">
                         transition: all 0.5s 0s linear;
@@ -72,5 +77,7 @@
 </body>
 
 <script type="text/javascript" src="script.min.js"></script>
+<style id="style-transitions"></style>
+<style id="style-animations"></style>
 
 </html>

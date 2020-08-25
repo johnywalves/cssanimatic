@@ -17,18 +17,17 @@ body {
   --highlight: #ed34a2;
   --shadowBox: #00000088;
   --background: #f3f3f3;
+  --backgroundLight: #e3e3e3;
   --backgroundMedium: #a0aabd;
   --backgroundDark: #282c35;
   --backgroundCode: #ffffcc;
-
-  --paddingBody: 2rem;
 }
 
 body {
   background: var(--background);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: var(--paddingBody);
+  padding: 2rem;
 }
 
 /* Content CSS */
@@ -39,14 +38,11 @@ body {
   font-size: 10rem;
   width: 20rem;
   height: 20rem;
+  margin: 0 auto;
   color: var(--background);
   background-color: var(--highlight);
   border-radius: 1rem;
-
-  -webkit-box-shadow: 1rem 1rem 1rem 0px var(--shadowBox);
-  -moz-box-shadow: 1rem 1rem 1rem 0px var(--shadowBox);
   box-shadow: 1rem 1rem 1rem 0px var(--shadowBox);
-
   cursor: pointer;
   transition: all 0.5s linear;
 }
@@ -72,24 +68,22 @@ code {
   background-color: var(--backgroundCode);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+span {
+  color: var(--background);
+  background-color: var(--backgroundDark);
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem 0px var(--shadowBox);
 }
 
-form label {
-  font-size: 2rem;
-  margin-bottom: 0.175rem;
+span:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
 }
 
-form input,
-form select {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#check-animation {
+#check-animation,
+#check-action {
   display: none;
 }
 
@@ -104,34 +98,39 @@ form select {
   padding: 1.5rem 5rem;
   margin: 0 2rem;
   font-size: 3rem;
-  color: var(--background);
-  background-color: var(--backgroundDark);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.5s;
-
-  -webkit-box-shadow: 0.5rem 0.5rem 0.5rem 0px var(--shadowBox);
-  -moz-box-shadow: 0.5rem 0.5rem 0.5rem 0px var(--shadowBox);
-  box-shadow: 0.5rem 0.5rem 0.5rem 0px var(--shadowBox);
-}
-
-.type-animation span:hover {
-  opacity: 0.8;
-  transform: translateY(-2px);
-}
-
-#check-animation:checked ~ .type-animation span:first-child,
-#check-animation:not(:checked) ~ .type-animation span:last-child {
-  background-color: var(--backgroundMedium);
-
-  -webkit-box-shadow: 0.25rem 0.25rem 0.25rem 0px var(--shadowBox);
-  -moz-box-shadow: 0.25rem 0.25rem 0.25rem 0px var(--shadowBox);
-  box-shadow: 0.25rem 0.25rem 0.25rem 0px var(--shadowBox);
 }
 
 .content {
   margin: 2rem 0;
   position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form label {
+  font-size: 2rem;
+  margin-bottom: 0.175rem;
+}
+
+form input,
+form select {
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+form .actions {
+  margin-bottom: 2rem;
+}
+
+form .actions span {
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+  font-size: 2rem;
 }
 
 .painel {
@@ -157,13 +156,25 @@ form select {
 
 .painel .code .sample {
   display: flex;
-  margin: 2rem auto 5rem;
+  padding: 5rem;
+  margin-bottom: 1rem;
+  border-radius: 2%;
+  width: 100%;
+  transition: all 0.3s;
 }
 
 #check-animation:checked ~ .content .painel-animations,
 #check-animation:not(:checked) ~ .content .painel-transitions {
   z-index: 0;
   opacity: 0;
+}
+
+#check-animation:checked ~ .type-animation span:first-child,
+#check-animation:not(:checked) ~ .type-animation span:last-child,
+#check-action:checked ~ .actions .action-hover,
+#check-action:not(:checked) ~ .actions .action-infinity {
+  background-color: var(--backgroundMedium);
+  box-shadow: 0.25rem 0.25rem 0.25rem 0px var(--shadowBox);
 }
 
 .soon {
