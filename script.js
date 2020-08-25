@@ -7,7 +7,7 @@ var end = {
 };
 
 function changeTransitions() {
-  var action = document.querySelector("#form-transitions #check-action")
+  var infinity = document.querySelector("#form-transitions #check-action")
     .checked;
 
   var property = document.querySelector("#form-transitions .property").value;
@@ -23,7 +23,7 @@ function changeTransitions() {
   var durationSec = duration / 1000.0;
 
   var prop = property !== "all" ? property : "transform";
-  if (action) {
+  if (infinity) {
     styleAnimations.innerHTML =
       "@keyframes animaframes { to { " + prop + ": " + end[property] + " } }";
     styleTransitions.innerHTML = "";
