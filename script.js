@@ -4,6 +4,8 @@ var end = {
   height: "30rem",
   width: "40rem",
   "box-shadow": "0.25rem 0.25rem 0.25rem 0.25rem var(--shadowBox)",
+  "font-size": "15rem",
+  "font-weight": 900,
 };
 
 function changeTransitions() {
